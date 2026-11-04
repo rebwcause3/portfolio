@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+.vscode/
+.idea/
+
+# Local tool settings
+.claude/
+
+# Resume drafts awaiting approval (never commit unreviewed versions)
+resume-review/
