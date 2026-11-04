@@ -39,7 +39,7 @@ export default function Header() {
   }, [open])
 
   const linkClass = (id) =>
-    `relative py-2 text-sm font-medium transition-colors ${
+    `relative whitespace-nowrap py-2 text-sm font-medium transition-colors ${
       active === id ? 'text-white' : 'text-slate-300 hover:text-white'
     }`
 
@@ -55,11 +55,11 @@ export default function Header() {
           <span className="hidden h-8 w-px bg-white/25 sm:block" aria-hidden="true" />
           <span className="flex flex-col">
             <span className="text-base font-semibold uppercase tracking-[0.14em] text-white sm:text-lg">{profile.name}</span>
-            <span className="hidden text-[11px] uppercase tracking-[0.12em] text-slate-300 sm:block">{profile.tagline}</span>
+            <span className="hidden whitespace-nowrap text-[11px] uppercase tracking-[0.12em] text-slate-300 sm:block xl:hidden 2xl:block">{profile.tagline}</span>
           </span>
         </a>
 
-        <ul className="hidden items-center gap-6 xl:flex">
+        <ul className="hidden shrink-0 items-center gap-5 xl:flex 2xl:gap-6">
           {navItems.map((item) => (
             <li key={item.id}>
               <a href={`#${item.id}`} className={linkClass(item.id)} aria-current={active === item.id ? 'true' : undefined}>
@@ -76,7 +76,7 @@ export default function Header() {
           <li>
             <a
               href="#contact"
-              className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
+              className="whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
             >
               Contact Me
             </a>
