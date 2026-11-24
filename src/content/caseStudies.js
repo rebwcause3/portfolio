@@ -1,164 +1,123 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // SELECTED WORK / CASE STUDIES
 // CONFIDENTIALITY RULES (review every edit against these):
-//  • No employer, client, agency, project, or code names
-//  • No system/vendor/tool names, architecture details, or configurations
-//  • No dollar figures, headcounts, dates, or locations that identify the work
+//  • No employer, client, project, or code names
+//  • No system/vendor names, architecture details, or configurations
+//  • No metrics, dates, locations, or team sizes that could identify the work
+//  • "Types of business value supported" describes the KIND of value, never a
+//    quantified result. Only add a number if it is public and approved.
 //
-// EVIDENCE RULES:
-//  • Every `role` and `approach` line must be supported by Renee's resume.
-//  • `outcomes` = DOCUMENTED results only (stated on the resume), each with a
-//    plain-language note of which initiative it came from.
-//  • `value` = the KINDS of business value the work was designed to support.
-//    These are intended benefits, not measured results.
-//  • `basis` + `disclosure` must say honestly whether a case study is a
-//    composite of several initiatives or draws on a single role.
-//
-// Revised November 2026.
+// DRAFT STATUS: The role and approach statements below are drafted from the
+// focus areas in the portfolio brief. Renee must confirm each line reflects
+// her actual responsibilities before publishing.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const caseStudiesNote =
   'Generalized descriptions of representative work. Organization names, project names, systems, and metrics are intentionally omitted to protect confidentiality.'
-
-export const basisLabels = {
-  composite: 'Composite',
-  'single-role': 'Single role',
-}
 
 export const caseStudies = [
   {
     id: 'program-modernization',
     tag: 'Program Delivery',
     visual: 'timeline',
-    basis: 'composite',
-    disclosure:
-      'This case study draws on experience across multiple enterprise technology and modernization initiatives. Organizational details have been generalized to protect confidentiality.',
     title: 'Enterprise Program Modernization',
     summary:
-      'Coordinating workstreams, governance, dependencies, and operational readiness across business and technical teams in enterprise technology and modernization initiatives.',
+      'Coordinating a complex, cross-functional technology initiative across multiple workstreams, from governance and delivery planning through operational readiness.',
     challenge:
-      'Across several enterprise initiatives, interconnected technology and data capabilities needed to be modernized while multiple business and technical teams worked to their own priorities and timelines. Demand, dependencies, and delivery commitments had to be coordinated across those teams, and in some cases a project-based way of working needed to mature into a structured program.',
+      'A large organization needed to modernize a set of interconnected technology capabilities. The work spanned several business and technical teams, each with its own priorities, timelines, and dependencies, and there was limited shared visibility into how decisions in one area affected the others.',
     role: [
-      'Led analytics workstreams within broader enterprise programs, coordinating cross-functional dependencies, governance, delivery planning and stakeholder alignment',
-      // Verified against Renee's resume (November 2026).
-      'Program management of enterprise data programs in a federal IT services role, including PMO coordination and guidance to technical teams',
-      'Project management, delivery planning, and roadmap development',
-      'Governance: establishing and coordinating recurring forums with business process owners to align demand, prioritization, and delivery commitments',
-      'Dependency and risk tracking, with executive reporting on portfolio performance, risks, dependencies, and roadmap progress',
-      'Stakeholder alignment, serving as a liaison between business, product, and technical teams',
+      'Program and project leadership across multiple workstreams',
+      'Governance and status cadence for business and technical stakeholders',
+      'Delivery planning, dependency tracking, and risk management',
+      'Liaison between business stakeholders and technical delivery teams',
     ],
     approach: [
-      { lead: 'Roadmap and planning', text: 'a multi-year roadmap aligning initiatives with business priorities and KPI frameworks' },
-      { lead: 'Governance and intake', text: 'a governance structure, intake process, and operating model to move from project-based work toward a formal program' },
-      { lead: 'Prioritization', text: 'recurring forums with business process owners to balance demand against delivery commitments' },
-      { lead: 'Dependency and risk management', text: 'tracking cross-program dependencies and risks and reporting them to leadership' },
-      { lead: 'Operational readiness', text: 'user acceptance testing, business sign-off, and training, with operating-model changes considered as part of readiness' },
+      { lead: 'Integrated planning', text: 'a single view of milestones and cross-team dependencies' },
+      { lead: 'Governance', text: 'regular decision forums with clear ownership and escalation paths' },
+      { lead: 'Risk management', text: 'early identification and tracking of risks, issues, and decisions' },
+      { lead: 'Stakeholder alignment', text: 'consistent communication tailored to executive and working-team audiences' },
+      { lead: 'Operational readiness', text: 'confirming people, processes, and support models were prepared before transition' },
     ],
-    outcomes: [],
     value: [
-      'Clearer visibility into status, risks, and dependencies for leadership',
-      'More consistent prioritization of demand against delivery capacity',
-      'Stronger alignment between business priorities and technology delivery',
-      'A more structured path from project-based work to a managed program',
+      'Clearer visibility into program status and dependencies',
+      'Earlier identification of risks and decision points',
+      'Stronger alignment between business priorities and technical delivery',
+      'A more predictable transition into day-to-day operations',
     ],
     lessons: [
       'Shared visibility is a prerequisite for shared accountability.',
       'Dependencies deserve as much attention as deliverables.',
-      'Business readiness is just as important as technical readiness.',
+      'Readiness is a business milestone, not just a technical one.',
     ],
   },
   {
     id: 'analytics-reporting',
     tag: 'Data & Analytics',
     visual: 'chart',
-    basis: 'composite',
-    disclosure:
-      'This case study draws on experience across multiple analytics and reporting initiatives. The documented outcome below is attributed to the specific initiative it came from. Organizational details have been generalized to protect confidentiality.',
     title: 'Analytics & Reporting Transformation',
     summary:
-      'Improving access to business information through structured analytics delivery, standardized definitions, data integration, and report automation.',
+      'Improving how business teams access and trust enterprise information through integrated reporting, better data quality, and a structured analytics delivery approach.',
     challenge:
-      'Reporting processes relied on manual data preparation and consolidation, increasing the effort required to produce timely, accessible business insights.',
+      "Business teams relied on reporting that came from multiple sources, was assembled manually, and didn't always agree. Time went into reconciling numbers instead of using them, and confidence in the data was uneven.",
     role: [
-      'Design, development, and deployment of departmental and enterprise-wide business intelligence applications',
-      'Building and owning a multi-year enterprise analytics roadmap, and leading analytics workstreams within strategic programs',
-      'Recurring governance with business process owners to align reporting demand, prioritization, and delivery',
-      'Oversight of enterprise reporting across ERP and CRM platforms, with a focus on data integration and accuracy',
-      'Applying standardized data definitions to assess systems and processes, and testing data outputs for accuracy and reliability',
+      'Analytics and reporting delivery leadership from requirements through rollout',
+      'Partnership with business users to define reporting needs and metric definitions',
+      'Coordination with data and technical teams on integration and data quality',
+      'Prioritization of reporting work against business value',
     ],
     approach: [
-      { lead: 'Start with the decisions', text: 'align reporting with business priorities and KPI frameworks' },
-      { lead: 'Common definitions', text: 'apply standardized data definitions before building or assessing reports' },
-      { lead: 'Data quality', text: 'test data outputs for accuracy and reliability' },
-      { lead: 'Integration', text: 'bring data from multiple sources into consistent reporting' },
-      { lead: 'Automation', text: 'replace recurring manual report preparation with automated reporting' },
-      { lead: 'Standards and adoption', text: 'document reporting standards and provide training so teams can use and sustain the work' },
-    ],
-    outcomes: [
-      {
-        text: 'Automated executive workforce overtime reports and P&L financial statements, eliminating 8–10 hours of manual reporting effort per reporting cycle.',
-        source: 'Health system finance reporting initiative',
-      },
-      {
-        text: 'Documented BI standard operating procedures and report and dashboard development standards that were adopted by application development teams across the organization.',
-        source: 'Same health system initiative',
-      },
+      { lead: 'Start with the decisions', text: 'identify which business questions the reporting needs to answer' },
+      { lead: 'Common definitions', text: 'agree on what each metric means before building it' },
+      { lead: 'Data quality', text: 'surface quality issues and address them at the source where possible' },
+      { lead: 'Integration', text: 'consolidate sources into a consistent reporting foundation' },
+      { lead: 'Iterative delivery', text: 'release in increments and refine based on user feedback' },
+      { lead: 'Adoption', text: 'training and support so teams actually use the new reporting' },
     ],
     value: [
       'Improved access to business information',
       'Greater consistency and confidence in reported data',
+      'Less manual effort assembling and reconciling reports',
       'Better-informed operational and leadership decisions',
     ],
     lessons: [
-      'Effective reporting begins with understanding what the business needs to know and why.',
-      'Data quality and consistency require clear ownership and accountability.',
-      'Automating a reporting process creates value when the information is accessible, timely and actionable.',
+      'Reporting problems are often definition problems in disguise.',
+      'Data quality improves fastest when it has a clear owner.',
+      'A report nobody trusts is a report nobody uses.',
     ],
   },
   {
     id: 'operational-systems',
     tag: 'Process Improvement',
     visual: 'workflow',
-    basis: 'single-role',
-    disclosure:
-      'This case study draws on related security initiatives within a single federal IT services role. The agency, systems, tools, and account counts are intentionally not named to protect confidentiality.',
     title: 'Operational Systems & Process Transformation',
     summary:
-      'Coordinating security-sensitive system implementations in a regulated federal environment while protecting critical administrative operations.',
+      'Guiding process and system changes in a regulated, operationally sensitive environment while protecting day-to-day continuity.',
     challenge:
-      'A regulated federal environment needed stronger controls over privileged administrative access to critical systems. The changes affected day-to-day administrative workflows and emergency recovery procedures, so they had to be introduced without disrupting the people and operations that depended on that access.',
+      'An operational area depended on specialized systems and closely linked workflows. Changes were needed to improve integration and reduce manual handoffs, but the environment was regulated and operations could not absorb disruption.',
     role: [
-      'Information security strategy and counsel for federal continuous monitoring and access-management initiatives',
-      'Requirements facilitation between technical teams and federal customers',
-      'Implementation coordination for a privileged access management solution, including UAT scheduling, formal sign-off, training sessions, and ongoing policy updates',
-      'Impact and gap analysis, requirements analysis, and test plan development to shape implementation strategy',
-      'Planning to address emergency-access and disaster recovery risks for privileged administrator accounts',
+      'Coordination of process and system changes across operational and technical teams',
+      'Workflow and system dependency analysis',
+      'Transition sequencing and continuity planning',
+      'Keeping compliance and documentation needs visible throughout',
     ],
     approach: [
-      { lead: 'Requirements facilitation', text: 'translate security needs into requirements agreed by technical teams and federal customers' },
-      { lead: 'Impact and gap analysis', text: 'assess how each change affects existing access, workflows, and controls before implementation' },
-      { lead: 'Implementation coordination', text: 'coordinate scheduling, testing, and rollout activities across technical teams and customers' },
-      { lead: 'UAT and formal sign-off', text: 'validate changes with users and obtain sign-off before they take effect' },
-      { lead: 'Training and policy updates', text: 'prepare administrators through training and keep policies current as the solution evolves' },
-      { lead: 'Emergency access and continuity', text: 'plan emergency-access ("break-glass") procedures so disaster recovery is not compromised' },
-      { lead: 'Security and governance', text: 'keep information security and governance considerations central to each decision' },
-    ],
-    outcomes: [
-      {
-        text: 'Delivered three proposed implementation strategies within an 8-hour critical turnaround to mitigate security risks for a privileged service account initiative.',
-        source: 'Federal IT services role',
-      },
+      { lead: 'Current-state mapping', text: 'document how work and information actually flow today' },
+      { lead: 'Dependency analysis', text: 'identify the upstream and downstream impact of each change' },
+      { lead: 'Future-state design', text: 'align process changes with system integration plans' },
+      { lead: 'Continuity planning', text: 'sequence changes and contingencies to protect operations' },
+      { lead: 'Compliance awareness', text: 'build documentation and review into the plan, not after it' },
+      { lead: 'Readiness', text: 'prepare staff and support teams ahead of each transition' },
     ],
     value: [
-      'Stronger control over privileged access to critical systems',
-      'Changes introduced with operational continuity as a priority',
-      'Administrators prepared through training and clear sign-off',
-      'Risks surfaced early through impact and gap analysis',
+      'Reduced reliance on manual handoffs',
+      'More consistent, reliable operational data',
+      'Change delivered with operational continuity as a priority',
+      'Clearer documentation supporting compliance needs',
     ],
     lessons: [
-      'Understand the people, processes and operational dependencies before changing the technology.',
-      'Security and governance should be incorporated into implementation planning, not added afterward.',
-      'Operational continuity must be considered throughout the implementation lifecycle.',
+      'In regulated operations, the process is part of the product.',
+      'Map the workflow before touching the system.',
+      'Continuity planning is what makes change acceptable to the people doing the work.',
     ],
   },
 ]

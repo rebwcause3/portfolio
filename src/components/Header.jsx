@@ -14,16 +14,10 @@ export function Monogram({ className = '' }) {
   )
 }
 
-/**
- * @param home    Path back to the home page ('' on the home page itself,
- *                e.g. '../../' on a sub-page), so section links work anywhere.
- * @param current On sub-pages, the nav item to highlight (scroll spy is off).
- */
-export default function Header({ home = '', current = null }) {
+export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const spied = useScrollSpy([...navItems.map((n) => n.id), 'contact'])
-  const active = current ?? spied
+  const active = useScrollSpy([...navItems.map((n) => n.id), 'contact'])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -56,7 +50,7 @@ export default function Header({ home = '', current = null }) {
       }`}
     >
       <nav aria-label="Primary" className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-        <a href={`${home}#home`} className="flex items-center gap-3 rounded-md" onClick={() => setOpen(false)}>
+        <a href="#home" className="flex items-center gap-3 rounded-md" onClick={() => setOpen(false)}>
           <Monogram />
           <span className="hidden h-8 w-px bg-white/25 sm:block" aria-hidden="true" />
           <span className="flex flex-col">
@@ -68,7 +62,7 @@ export default function Header({ home = '', current = null }) {
         <ul className="hidden shrink-0 items-center gap-5 xl:flex 2xl:gap-6">
           {navItems.map((item) => (
             <li key={item.id}>
-              <a href={`${home}#${item.id}`} className={linkClass(item.id)} aria-current={active === item.id ? 'true' : undefined}>
+              <a href={`#${item.id}`} className={linkClass(item.id)} aria-current={active === item.id ? 'true' : undefined}>
                 {item.label}
                 <span
                   aria-hidden="true"
@@ -81,7 +75,7 @@ export default function Header({ home = '', current = null }) {
           ))}
           <li>
             <a
-              href={`${home}#contact`}
+              href="#contact"
               className="whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
             >
               Contact Me
@@ -107,7 +101,7 @@ export default function Header({ home = '', current = null }) {
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
-                  href={`${home}#${item.id}`}
+                  href={`#${item.id}`}
                   onClick={() => setOpen(false)}
                   aria-current={active === item.id ? 'true' : undefined}
                   className={`block rounded-md px-3 py-2.5 text-base font-medium ${
@@ -120,7 +114,7 @@ export default function Header({ home = '', current = null }) {
             ))}
             <li className="pt-2">
               <a
-                href={`${home}#contact`}
+                href="#contact"
                 onClick={() => setOpen(false)}
                 className="block rounded-lg bg-accent px-3 py-2.5 text-center text-base font-semibold text-white hover:bg-accent-dark"
               >

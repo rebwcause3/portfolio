@@ -30,7 +30,7 @@ export const navItems = [
   { id: 'work', label: 'Case Studies' },
   { id: 'ai', label: 'AI & Innovation' },
   { id: 'credentials', label: 'Credentials' },
-  { id: 'speaking', label: 'Speaking & Publications' },
+  { id: 'speaking', label: 'Speaking' },
 ]
 
 export const hero = {

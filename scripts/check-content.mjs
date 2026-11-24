@@ -10,7 +10,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.js'))) {
   readFileSync(join(dir, file), 'utf8')
     .split(/\r?\n/)
     .forEach((line, i) => {
-      if (/TODO|DRAFT|PENDING/.test(line)) {
+      if (/TODO|DRAFT/.test(line)) {
         count++
         console.log(`  src/content/${file}:${i + 1}  ${line.trim().replace(/^\/\/\s?/, '')}`)
       }

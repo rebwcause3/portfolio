@@ -141,7 +141,7 @@ export default function Hero() {
                 )
               )}
             </div>
-            {import.meta.env.DEV && !resume && (
+            {!resume && (
               <Placeholder className="mx-auto mt-3 max-w-md lg:mx-0">
                 Resume PDF not added yet. This button is hidden on the live site until <code>links.resume</code> is set in <code>src/content/profile.js</code>.
               </Placeholder>

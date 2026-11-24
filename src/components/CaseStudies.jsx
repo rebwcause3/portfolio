@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { ArrowRight, BadgeCheck, CheckCircle2, Layers, Lightbulb, Lock, X } from 'lucide-react'
-import { basisLabels, caseStudies, caseStudiesNote } from '../content/caseStudies'
-import { Reveal, SectionHeading, container } from './ui'
+import { ArrowRight, CheckCircle2, Lightbulb, Lock, X } from 'lucide-react'
+import { caseStudies, caseStudiesNote } from '../content/caseStudies'
+import { Placeholder, Reveal, SectionHeading, container } from './ui'
 
 /* Abstract, non-identifying illustrations instead of stock photography. */
 function Visual({ type }) {
@@ -59,22 +59,6 @@ function Visual({ type }) {
   )
 }
 
-/** Labels whether a case study is a composite or draws on a single role. */
-function BasisChip({ basis, dark = false }) {
-  const label = basisLabels[basis]
-  if (!label) return null
-  return (
-    <span
-      className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ${
-        dark ? 'text-lavender ring-lavender/40' : 'text-accent ring-accent/30'
-      }`}
-    >
-      <Layers className="h-3 w-3" aria-hidden="true" />
-      {label}
-    </span>
-  )
-}
-
 function CaseStudyDialog({ study, onClose }) {
   const ref = useRef(null)
 
@@ -106,10 +90,7 @@ function CaseStudyDialog({ study, onClose }) {
       <div className="max-h-[90vh] overflow-y-auto">
         <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-slate-200 bg-white/95 px-6 py-5 backdrop-blur sm:px-8">
           <div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-block rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-white">{study.tag}</span>
-              <BasisChip basis={study.basis} />
-            </div>
+            <span className="inline-block rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-white">{study.tag}</span>
             <h3 id="case-dialog-title" className="mt-2 text-xl font-bold text-navy sm:text-2xl">{study.title}</h3>
           </div>
           <button
@@ -125,11 +106,11 @@ function CaseStudyDialog({ study, onClose }) {
         <div className="space-y-8 px-6 py-6 sm:px-8 sm:py-8">
           <p className="flex items-start gap-2 rounded-lg bg-soft px-4 py-3 text-sm text-slate-600">
             <Lock className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-            <span>
-              <span className="sr-only">Disclosure: </span>
-              {study.disclosure || caseStudiesNote}
-            </span>
+            {caseStudiesNote}
           </p>
+          <Placeholder>
+            Draft for review. Confirm each role and approach statement reflects your actual responsibilities before publishing.
+          </Placeholder>
 
           <section>
             <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">The business challenge</h4>
@@ -160,28 +141,8 @@ function CaseStudyDialog({ study, onClose }) {
             </ul>
           </section>
 
-          {study.outcomes?.length > 0 && (
-            <section className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-5">
-              <h4 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">
-                <BadgeCheck className="h-4 w-4" aria-hidden="true" />
-                Documented outcomes
-              </h4>
-              <ul className="mt-3 space-y-3">
-                {study.outcomes.map((o) => (
-                  <li key={o.text} className="text-slate-800">
-                    <p className="leading-relaxed">{o.text}</p>
-                    {o.source && <p className="mt-0.5 text-xs text-slate-500">Source: {o.source}</p>}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
           <section>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Business value supported</h4>
-            <p className="mt-1 text-xs text-slate-500">
-              The kinds of value this work was designed to support. These are intended benefits, not measured results.
-            </p>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Types of business value supported</h4>
             <ul className="mt-3 space-y-2">
               {study.value.map((v) => (
                 <li key={v} className="flex items-start gap-2 text-slate-700">
@@ -244,10 +205,7 @@ export default function CaseStudies() {
                   <Visual type={study.visual} />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-white">{study.tag}</span>
-                    <BasisChip basis={study.basis} dark />
-                  </div>
+                  <span className="self-start rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-white">{study.tag}</span>
                   <h3 className="mt-3 text-lg font-bold text-white">{study.title}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-300">{study.summary}</p>
                   <button

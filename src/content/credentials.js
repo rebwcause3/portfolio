@@ -38,7 +38,8 @@ export const credentials = [
     issuer: 'AI InnoVision · CPD accredited',
     year: 2026,
     status: 'earned',
-    // OPTIONAL: public verification page for this certificate, if the issuer provides one
+    // OPTIONAL: public verification page for certificate
+    // fece6a70-b54d-4ab4-8789-e35a587b76d4, if AI InnoVision provides one
     verifyUrl: null,
   },
   {

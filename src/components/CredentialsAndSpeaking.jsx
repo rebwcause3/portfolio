@@ -1,7 +1,6 @@
-import { ArrowRight, Award, BookOpen, CalendarDays, Clock, ExternalLink, Mic } from 'lucide-react'
+import { ArrowRight, Award, CalendarDays, Clock, ExternalLink, Mic } from 'lucide-react'
 import { credentials } from '../content/credentials'
 import { featuredTalk, otherEngagements } from '../content/speaking'
-import { publications } from '../content/publications'
 import { Placeholder, Reveal, SectionHeading, container } from './ui'
 
 const statusLabel = {
@@ -23,7 +22,7 @@ function CredentialCard({ c }) {
         <span
           aria-hidden="true"
           className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
-            inProgress ? 'bg-slate-100 text-slate-600 ring-1 ring-slate-300' : 'bg-accent/10 text-accent ring-2 ring-accent/30'
+            inProgress ? 'bg-slate-100 text-slate-500 ring-1 ring-slate-300' : 'bg-accent/10 text-accent ring-2 ring-accent/30'
           }`}
         >
           {c.abbr}
@@ -58,7 +57,7 @@ function CredentialCard({ c }) {
           </a>
         )}
       </div>
-      {import.meta.env.DEV && !c.verifyUrl && !inProgress && (
+      {!c.verifyUrl && !inProgress && (
         <Placeholder className="mt-3 text-xs">Add a verification link for {c.abbr} in <code>credentials.js</code>.</Placeholder>
       )}
     </li>
@@ -95,9 +94,9 @@ export default function CredentialsAndSpeaking() {
             <SectionHeading
               id="speaking-title"
               eyebrow="Speaking"
-              title="Speaking & Publications"
+              title="Speaking & Thought Leadership"
               align="left"
-              intro="Presentations and published articles on practical technology, analytics, and AI adoption."
+              intro="Presentations and educational contributions on practical technology, analytics, and AI adoption."
             />
           </Reveal>
 
@@ -123,29 +122,20 @@ export default function CredentialsAndSpeaking() {
                   </span>
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-slate-700">{featuredTalk.description}</p>
-                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
-                  {featuredTalk.page && (
-                    <a
-                      href={featuredTalk.page}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
-                    >
-                      View presentation
-                      <span className="sr-only">: {featuredTalk.title}</span>
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </a>
-                  )}
-                  {featuredTalk.url && (
-                    <a
-                      href={featuredTalk.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
-                    >
-                      Event website <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                      <span className="sr-only">(opens in a new tab)</span>
-                    </a>
-                  )}
-                </div>
+                {featuredTalk.url && (
+                  <a
+                    href={featuredTalk.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
+                  >
+                    Event details <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                    <span className="sr-only">(opens in a new tab)</span>
+                  </a>
+                )}
+                <Placeholder className="mt-4 text-xs">
+                  Confirm the talk status and dates, and replace the draft abstract with the official one, in <code>speaking.js</code>.
+                </Placeholder>
               </div>
             </article>
 
@@ -165,41 +155,6 @@ export default function CredentialsAndSpeaking() {
                   </li>
                 ))}
               </ul>
-            )}
-
-            {publications.length > 0 && (
-              <div className="mt-8">
-                <h3 className="flex items-center gap-2 text-lg font-bold text-navy">
-                  <BookOpen className="h-5 w-5 text-accent" aria-hidden="true" />
-                  Published articles
-                </h3>
-                <ul className="mt-4 space-y-3">
-                  {publications.map((p) => (
-                    <li key={p.url}>
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
-                      >
-                        <p className="text-xs font-semibold uppercase tracking-wider text-accent">
-                          {p.outlet} · <time dateTime={p.isoDate}>{p.date}</time>
-                        </p>
-                        <p className="mt-1 flex items-start justify-between gap-3 font-semibold leading-snug text-navy">
-                          <span>{p.title}</span>
-                          <ExternalLink className="mt-1 h-4 w-4 shrink-0 text-slate-400 group-hover:text-accent" aria-hidden="true" />
-                        </p>
-                        {p.summary && <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{p.summary}</p>}
-                        <p className="mt-1.5 text-xs text-slate-500">
-                          By {p.byline}
-                          {p.note ? ` · ${p.note}` : ''}
-                        </p>
-                        <span className="sr-only">(opens in a new tab)</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             )}
 
             <div className="mt-6 flex flex-col gap-3 rounded-xl bg-soft p-5 sm:flex-row sm:items-center sm:justify-between">
