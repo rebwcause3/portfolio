@@ -45,17 +45,17 @@ export default function Contact() {
           </ul>
 
           <div className="mx-auto mt-4 max-w-4xl space-y-2">
-            {!resume && <Placeholder>Resume PDF: add it to <code>public/resume/</code> and set <code>links.resume</code> in <code>profile.js</code>.</Placeholder>}
-            {!linkedin && <Placeholder>LinkedIn URL: set <code>links.linkedin</code> in <code>profile.js</code>.</Placeholder>}
-            {!email && <Placeholder>Email (optional, needs your approval): set <code>links.email</code>. Hidden until then.</Placeholder>}
-            {!github && <Placeholder>GitHub (optional): set <code>links.github</code>. Hidden until then.</Placeholder>}
+            {import.meta.env.DEV && !resume && <Placeholder>Resume PDF: add it to <code>public/resume/</code> and set <code>links.resume</code> in <code>profile.js</code>.</Placeholder>}
+            {import.meta.env.DEV && !linkedin && <Placeholder>LinkedIn URL: set <code>links.linkedin</code> in <code>profile.js</code>.</Placeholder>}
+            {import.meta.env.DEV && !email && <Placeholder>Email (optional, needs your approval): set <code>links.email</code>. Hidden until then.</Placeholder>}
+            {import.meta.env.DEV && !github && <Placeholder>GitHub (optional): set <code>links.github</code>. Hidden until then.</Placeholder>}
           </div>
 
           {!hasAny && !import.meta.env.DEV && (
             <p className="mx-auto mt-8 max-w-xl text-center text-slate-600">Contact details will be available here soon.</p>
           )}
 
-          <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-slate-500">
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-slate-600">
             This site does not collect form submissions or use tracking cookies.
           </p>
         </Reveal>

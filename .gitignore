@@ -13,3 +13,6 @@ Thumbs.db
 
 # Resume drafts awaiting approval (never commit unreviewed versions)
 resume-review/
+
+# Private review packages (never deployed)
+review/
