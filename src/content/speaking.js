@@ -32,14 +32,13 @@ export const talkPage = {
     'The views and tools shared in this presentation are my own and are not endorsed by the AI Health & Wellness Summit. I presented as an independent third-party presenter. All scenarios are fictional and use synthetic data.',
   closing:
     'Progress is not always moving forward. Sometimes it is knowing when to stop. Understand the business first. Then decide whether AI belongs, and where a person must stay.',
-  // Recording: not published until distribution permission is confirmed.
-  // To enable: set embedUrl (the video host's embed link) and url (its share
-  // link), then permissionConfirmed: true. The video file itself is never
-  // downloaded or committed; it streams from its host.
+  // Recording: distribution permission confirmed. Streams from Google Drive;
+  // the video file is never downloaded or committed. The fallback button uses
+  // the player-only link, which has no download option.
   recording: {
-    embedUrl: null,
-    url: null,
-    permissionConfirmed: false,
+    embedUrl: 'https://drive.google.com/file/d/1Y_v1Dvky-4VpsF3iZOSr82HkN8-qiEcZ/preview',
+    url: 'https://drive.google.com/file/d/1Y_v1Dvky-4VpsF3iZOSr82HkN8-qiEcZ/preview',
+    permissionConfirmed: true,
   },
   scenario: {
     title: 'The scenario: one referral, five places at once',
