@@ -42,6 +42,15 @@ export const credentials = [
     verifyUrl: null,
   },
   {
+    abbr: 'CAAB',
+    // Issuer's official title. Awarded November 24, 2026.
+    name: 'Certified AI Agent Builder',
+    issuer: 'AI InnoVision',
+    year: 2026,
+    status: 'earned',
+    verifyUrl: 'https://credsverse.com/credentials/59d236a9-f118-40d9-b8a8-8173dbcb7d11',
+  },
+  {
     abbr: 'Azure',
     name: 'Microsoft Azure Data Fundamentals',
     issuer: 'Microsoft',
